@@ -2,12 +2,10 @@ import pymunk
 from player import Player
 
 class Qwop:
-    def __init__(self):
-        self.space = pymunk.Space()
-        self.space.gravity = 0, -1000  # Set gravity of space to -1000
+    def __init__(self,space):
+        self.space = space
 
-        self.body = pymunk.Body()  # pass rigid body in for editing
-        self.player = Player(space, body)
+        self.player = Player(self.space)
 
     def get_player(self):
         return self.player
